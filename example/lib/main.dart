@@ -42,22 +42,54 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: MorphButton(
-          width: 200.0,
-          height: 200.0,
-          pressedColor: Theme.of(context).colorScheme.primary,
-          initialColor: Theme.of(context).colorScheme.primary.withOpacity(0.6),
-          initialRadius: 24.0,
-          title: const Text(
-            'Click Me',
-            style: TextStyle(
-              fontSize: 20.0,
-              color: Colors.white,
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.6,
+          child: GridView.builder(
+            shrinkWrap: true,
+            itemCount: 9,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 8.0,
+              crossAxisSpacing: 8.0,
             ),
+            itemBuilder: (context, index) {
+              return DialButton(
+                title: '${index + 1}',
+              );
+            },
           ),
-          onTap: () {},
         ),
       ),
     );
+  }
+}
+
+class DialButton extends StatelessWidget {
+  const DialButton({
+    super.key,
+    required this.title,
+  });
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, constraints) {
+      return MorphButton(
+        width: constraints.maxWidth,
+        height: constraints.maxWidth,
+        pressedColor: Theme.of(context).colorScheme.primary,
+        initialColor: Theme.of(context).colorScheme.primary.withOpacity(0.6),
+        initialRadius: 12.0,
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+          ),
+        ),
+        onTap: () {},
+      );
+    });
   }
 }

@@ -27,7 +27,7 @@ class _MorphButtonState extends State<MorphButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _shapeAnimation;
-  final Duration _animationDuration = const Duration(milliseconds: 300);
+  final Duration _animationDuration = const Duration(milliseconds: 250);
 
   @override
   void initState() {
@@ -51,7 +51,7 @@ class _MorphButtonState extends State<MorphButton>
   void _toggleButtonState() {
     setState(() {
       _controller.forward();
-      Future.delayed(const Duration(milliseconds: 400)).then((value) {
+      Future.delayed(const Duration(milliseconds: 250)).then((value) {
         _controller.reverse();
       });
     });
