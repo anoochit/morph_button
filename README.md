@@ -2,6 +2,25 @@
 
 An animated shape transform button.
 
+## Install
+
+Add morph_button to your pubspec.yaml
+
+Using Dart package
+
+```bash
+dart pub add morph_button
+```
+
+Using GIT URL
+
+```yaml
+dependencies:
+  morph_button:
+    git:
+      url: https://github.com/anoochit/morph_button.git
+```
+
 ## Usage
 
 ```dart
