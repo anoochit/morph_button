@@ -1,7 +1,7 @@
 name: morph_button
-description: "A new Flutter package project."
+description: "A shape animated button"
 version: 0.0.1
-# homepage:
+homepage: https://github.com/anoochit/morph_button
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
