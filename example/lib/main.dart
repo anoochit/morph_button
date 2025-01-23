@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:morph_button/morph_button_widget.dart';
 
@@ -43,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.6,
+          width: MediaQuery.of(context).size.width * 0.8,
           child: GridView.builder(
             shrinkWrap: true,
             itemCount: 9,
@@ -79,14 +81,14 @@ class DialButton extends StatelessWidget {
         width: constraints.maxWidth,
         height: constraints.maxWidth,
         pressedColor: Theme.of(context).colorScheme.primary,
-        initialColor: Theme.of(context).colorScheme.primary.withOpacity(0.6),
+        initialColor: Theme.of(context).colorScheme.inversePrimary,
         initialRadius: 12.0,
         title: Text(
           title,
-          style: const TextStyle(
-            fontSize: 20.0,
-            color: Colors.white,
-          ),
+          style: Theme.of(context)
+              .textTheme
+              .headlineLarge!
+              .apply(color: Colors.white),
         ),
         onTap: () {},
       );

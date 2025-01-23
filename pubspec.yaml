@@ -1,6 +1,6 @@
 name: morph_button
 description: "Animate buttons! Flutter package for dynamic shapes & smooth animations."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/anoochit/morph_button
 
 environment:
